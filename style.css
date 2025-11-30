@@ -1,0 +1,671 @@
+:root {
+    --dark-bg: #222222; 
+    --light-bg: #FDFFE1; 
+    --accent-green: #2B3517; 
+    --project-red:  #B12025; 
+    --wine-red: #530608;
+    --font-serif: "playfair display", "Times New Roman", serif; 
+    --font-sans: "Poppins", sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--dark-bg);
+    font-family: var(--font-sans);
+    color: var(--accent-green);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/*  Cover Page Layout  */
+.cover-page {
+    min-height: 100vh; 
+    display: flex;
+    flex-direction: column;
+}
+
+/*  Image and Header Section  */
+.header-image-container {
+    position: relative;
+    height: 70vh; 
+    overflow: hidden;
+    background-image: url(images/cover\ image.jpg); 
+    background-size: cover;
+    background-position: center center;
+    filter: brightness(0.9) contrast(1.1) saturate(0.8);
+}
+
+/*  Navigation  */
+.main-nav {
+    position: absolute;
+    top: 25px;
+    right: 50px;
+    display: flex;
+    gap: 15px;
+    z-index: 10;
+}
+
+.nav-btn {
+    padding: 8px 18px;
+    border: 2px solid var(--light-bg);
+    border-radius: 20px;
+    color: var(--light-bg);
+    font-size: 14px;
+    font-family: var(--font-sans);
+    letter-spacing: 0.5px;
+    text-transform: lowercase;
+    transition: lr 0.3s;
+}
+
+.nav-btn:hover {
+    background-color:var(--accent-green);
+    border:var(--accent-green);
+}
+
+/*  Content Section  */
+.content-section {
+    background-color: var(--light-bg);
+    flex-grow: 1; 
+    padding: 50px 100px; 
+    position: relative;
+    margin-top: -150px; 
+    z-index: 1
+}
+
+.portfolio-title {
+    font-family: var(--font-serif);
+    font-size: 80px;
+    font-weight: 400; 
+    letter-spacing: 2px;
+    margin: 0;
+    line-height: 0.9;
+}
+
+.name-subtitle {
+    font-family: var(--font-serif);
+    font-size: 24px;
+    font-style: italic;
+    margin: 10px 0 0 0;
+    font-weight: 400;
+}
+
+/*  View Work Button  */
+.view-work-btn {
+    position: absolute;
+    bottom: 50px;
+    right: 100px;
+    padding: 10px 25px;
+    border: 2px solid var(--accent-green);
+    border-radius: 25px;
+    font-size: 16px;
+    font-family: var(--font-sans);
+    text-transform: lowercase;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.view-work-btn:hover {
+    background-color: var(--accent-green);
+    color: var(--light-bg);
+}
+
+/*  ABOUT ME SECTION STYLES */
+
+.about-me-section {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    padding: 0;
+    margin-top: 0; 
+    display: block;
+    justify-content: center; 
+    align-items: center; 
+    overflow: hidden; 
+    background-color: var(--dark-bg);
+}
+
+.profile-photo-bg {
+    width: 100%;
+    height: 90%;
+    object-fit: cover; 
+    display: block;
+    filter: brightness(0.95); 
+}
+
+
+.about-text-box, .experience-text-box {
+    position: absolute;
+    color: var(--light-bg);
+    width: 300px; 
+    z-index: 2;
+
+    /* Animation setup */
+    opacity: 0; 
+    transform: translateY(30px); 
+    animation: slideUpFadeIn 3s ease-out forwards;
+}
+
+/*  Positioning the Boxes   */
+.about-text-box {
+    top: 6%; 
+    left: 10%; 
+}
+
+.experience-text-box {
+    top: 12%; 
+    right: 10%; 
+}
+
+/*  Text Styles  */
+.section-title {
+    font-family: var(--font-serif);
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.experience-role,
+.experience-date,
+.experience-details {
+    margin: 0;        
+    padding: 0;
+}
+
+.experience-date {
+    margin-top: 4px;     
+}
+
+.experience-details {
+    margin-top: 4px;    
+}
+
+
+/*  Skill Icons Styling  */
+.skill-icons {
+    display: flex;
+    gap: 15px; 
+    margin-top: 15px;
+}
+
+.skill-icons iconify-icon { 
+    font-size: 36px; 
+    color: var(--accent-green); 
+}
+
+
+/* ANIMATION (Text Pop-up) */
+
+/* Define the animation keyframes */
+@keyframes slideUpFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px); 
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.experience-text-box {
+    animation-delay: 0.5s; 
+}
+
+/*  PROJECTS SECTION STYLES  */
+
+.projects-section {
+    min-height: 100vh;
+    margin-top: 0; 
+    padding: 100px 0;
+    width: 100%;
+    background-color: var(--light-bg); 
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; 
+}
+
+.project-content-wrapper {
+    width: 80%;
+    max-width: 1100px; 
+    background-color: #FDFFE1; 
+    padding: 60px 80px; 
+    display: flex;
+    gap: 50px;
+}
+
+/*  Project Info (Left Column)  */
+.project-info-column {
+    flex: 1.5; 
+    color: var(--accent-green);
+}
+
+.projects-pill {
+    display: inline-block;
+    padding: 8px 18px;
+    border: 2px solid var(--accent-green);
+    border-radius: 20px;
+    color: var(--accent-green);
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    font-family: var(--font-sans);
+}
+
+.project-title {
+    font-family: var(--font-serif);
+    font-size: 50px; 
+    color:var(--project-red); 
+}
+
+.project-description {
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    color: var(--project-red); 
+    width: 300px;
+}
+
+.project-role-text {
+    font-family: var(--font-sans);
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--project-red); 
+}
+
+/*  Project Image (Right Column)  */
+.project-image-column {
+    flex: 1; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*  MENU FLIP INTERACTION */
+
+.menu-flip-container {
+    position: relative;
+    width: 350px; 
+    height: 600px; 
+}
+
+.menu-page {
+    position: absolute;
+    top: 15%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    opacity: 0; 
+    pointer-events: none; 
+    transition: opacity 0.5s ease-in-out;
+}
+.menu-flip-container > .menu-page:first-child {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.menu-page:target {
+    opacity: 1; 
+    pointer-events: auto; 
+}
+
+.menu-page:target ~ .menu-page {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/*  Nav Dots Styling  */
+.menu-nav-dots {
+    position: absolute;
+    bottom: -110px; 
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 20;
+}
+
+.nav-dot {
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: #f7baba;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+
+.nav-dot:hover,
+.menu-flip-container > .menu-page:first-child:target  ~ .menu-nav-dots a[href="#menu-page-1"],
+.menu-flip-container > .menu-page:nth-child(2):target ~ .menu-nav-dots a[href="#menu-page-2"],
+.menu-flip-container > .menu-page:nth-child(3):target ~ .menu-nav-dots a[href="#menu-page-3"],
+.menu-flip-container > .menu-page:nth-child(4):target ~ .menu-nav-dots a[href="#menu-page-4"],
+.menu-flip-container > .menu-page:nth-child(5):target ~ .menu-nav-dots a[href="#menu-page-5"],
+.menu-flip-container > .menu-page:nth-child(6):target ~ .menu-nav-dots a[href="#menu-page-6"]
+{
+    background-color:var(--project-red);
+}
+
+/* MOCKUPS SECTION STYLES */
+
+.mockups-section {
+    min-height: 100vh;
+    width: 100%;
+    background-color: var(--light-bg); 
+    padding: 80px 0;
+    display: flex;
+    justify-content: center;
+}
+.mockups-content-wrapper {
+    width: 80%; 
+    max-width: 1200px; 
+    padding: 0 80px; 
+    box-sizing: border-box; 
+}
+.mockups-title {
+    font-family: var(--font-serif);
+    font-size: 50px; 
+    color:var(--project-red); 
+    margin: 0 0 50px 0;
+    text-align: left;
+  
+}
+/*  Mockups Grid Layout  */
+.mockups-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 60px;
+}
+.mockup-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin: 0; 
+    padding: 0;
+}
+
+/* WINE LABEL PROJECT STYLES */
+
+@font-face {
+    font-family: 'Darkones';
+    src: url('fonts/Darkones-Regular.ttf') format('truetype');
+}
+
+/*  WINE LABEL PROJECT STYLES (Page 1) */
+
+.wine-project-section {
+    min-height: 100vh;
+    width: 100%;
+    background-color: var(--light-bg); 
+    padding: 100px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    overflow: hidden; 
+    position: relative; 
+}
+
+/*  Content Wrapper  */
+.wine-content-wrapper {
+    position: relative; 
+    width: 90%;
+    max-width: 1200px;
+    height: 70vh; 
+    display: block; 
+}
+
+/*  Logo/Title Styling  */
+.wine-logo-container {
+    position: absolute;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    z-index: 10;
+    transition: opacity 0.8s ease-in-out; 
+}
+
+.wine-title {
+    font-family: 'Darkones', serif;
+    font-size: 220px; 
+    font-weight: 500;
+    color: var(--wine-red);
+    margin: 0;
+    text-transform: uppercase; 
+    text-align: center;
+}
+.wine-title .lower-text {
+    text-transform: lowercase;
+}
+
+/*  Wine Bottle Styling (page 1)  */
+.wine-bottle-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    z-index: 20; 
+    transition: all 1.2s ease-in-out; 
+}
+
+.wine-bottle-img {
+    max-width: 500px; 
+    height: auto;
+    display: block;
+    filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.3))
+}
+
+/* SCROLL ANIMATION: INITIAL STATE (HIDDEN/OFF-SCREEN) */
+.wine-logo-container,
+.wine-bottle-container {
+    opacity: 0;
+}
+
+.wine-logo-container {
+    transform: translate(-50%, 50px); 
+}
+
+.wine-bottle-container {
+    transform: translate(-50%, 150px); 
+}
+
+/* SCROLL ANIMATION: FINAL STATE (REVEALED ON PAGE 1) */
+
+.wine-project-section.is-visible .wine-logo-container {
+    opacity: 1;
+    transform: translate(-50%, -50%); 
+}
+
+.wine-project-section.is-visible .wine-bottle-container {
+    opacity: 1;
+    transform: translate(-50%, -50%); 
+    transition-delay: 0.3s; 
+}
+/* NEW: STATE WHEN SCROLLING TO PAGE 2 - FADE OUT LOGO */
+.wine-project-section.is-visible-details .wine-logo-container {
+    opacity: 0; 
+}
+
+/*  WINE DETAILS PROJECT STYLES (Page 2) */
+
+.wine-details-section {
+    min-height: 100vh;
+    background-color: var(--light-bg); 
+}
+
+.wine-details-section .project-image-column {
+    position: relative; 
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+}
+
+/*  Text Animation (for Wine Label Design title/description)  */
+.wine-details-section .wine-info-column {
+    opacity: 0;
+    transform: translateY(50px); /* Text starts below */
+    transition: all 1.2s ease-out;
+}
+
+/* Text final state: moves up and fades in */
+.wine-details-section.is-visible-details .wine-info-column {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* NEW: Placeholder for the bottle's final position */
+#bottle-destination-placeholder {
+    width: 200px;
+    height: 600px; 
+    position: relative; 
+}
+.wine-details-section .project-title,
+.wine-details-section .project-description,
+.wine-details-section .project-role-text {
+    color: var(--wine-red);
+}
+
+/*  WINE DETAILS PROJECT STYLES (Page 2)  */
+
+/*  Container for Stacking Images  */
+.wine-details-section .project-image-column {
+    position: relative; 
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+}
+
+/*  Shared Style for Bottle and Poster  */
+.wine-details-img {
+    position: absolute; 
+    top: 50%;
+    left: 50%;
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out; 
+    height: auto;
+}
+
+/*  Bottle Styling  */
+.wine-details-bottle {
+    opacity: 1; 
+    max-width: 700px; 
+    transform: translate(-50%, -50%) rotate(17deg); 
+    filter: drop-shadow(0px 10px 10px rgba(20, 1, 1, 0.452));
+}
+
+/*  Poster Styling  */
+.wine-details-poster {
+    opacity: 0; 
+    max-width: 450px; 
+    transform: translate(-50%, -50%) rotate(0deg); 
+    filter: drop-shadow(0px 5px 15px rgba(0, 0, 0, 0.3));
+}
+
+/* JS Triggered Class for Second Stage (Bottle out, Poster in) */
+.wine-details-section.show-poster .wine-details-bottle {
+    opacity: 0; 
+}
+
+.wine-details-section.show-poster .wine-details-poster {
+    opacity: 1; 
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-sans);
+}
+
+.contact-section {
+    width: 100%;
+}
+/* CONTACT ME PAGE */
+/* TOP RECTANGLE AREA */
+.top-area {
+    background: var(--light-bg); 
+    padding: 80px 100px 40px;
+    position: relative;
+}
+
+.contact-btn {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    padding: 10px 24px;
+    background: none;
+    border: 2px solid var(--accent-green);
+    border-radius: 40px;
+    font-size: 16px;
+    cursor: pointer;
+    font-family: var(--font-sans);
+}
+
+.title {
+    font-family: var(--font-serif);
+    font-size: 64px;
+    color:var(--accent-green);
+    line-height: 1.1;
+}
+
+/* BOTTOM IMAGE BACKGROUND AREA */
+.bottom-area {
+    background-image: url(images/contact\ page.png); /* put your green texture image */
+    background-size: cover;
+    background-position: center;
+    padding: 100px 100px;
+    display: flex;
+    gap: 80px;
+}
+
+/* LEFT PARAGRAPH */
+.left-text {
+    width: 35%;
+    color: var(--light-bg);
+    font-size: 20px;
+    line-height: 1.6;
+    margin-left: 10%;
+}
+
+.reach {
+    font-weight: 500;
+    margin-top: 20px;
+}
+
+/* RIGHT SIDE – EMAIL + SOCIAL */
+.right-text {
+    width: 35%;
+    color:var(--light-bg);
+    font-size: 20px;
+    margin-left: 20%;
+}
+
+.label {
+    background: var(--light-bg);
+    color:var(--accent-green) ;
+    padding: 6px 18px;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+.email-box,
+.social-box {
+    margin-bottom: 40px;
+}
+
+.icon {
+    margin-right: 10px;
+}
+
+.right-text a:hover {
+    opacity: 0.7;
+}
+.social-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;    
+    margin: 8px 0; 
+}
+
+.social-item iconify-icon {
+    font-size: 22px;
+}
